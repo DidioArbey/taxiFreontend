@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from 'src/app/models/product.model';
+import { Taxi } from 'src/app/models/product.model';
 import { Router } from '@angular/router';
 import { CrudService } from 'src/app/services/crud.service';
 import { AlertifyService } from 'src/app/services/alertify.service';
@@ -13,10 +13,10 @@ export class CreateComponent {
   constructor(private router:Router, private crudService:CrudService, private alertifyService:AlertifyService){
 
   }
-  onSubmit(product:Product){
-    this.crudService.createProduct(product).subscribe({
+  onSubmit(taxi:Taxi){
+    this.crudService.createProduct(taxi).subscribe({
       next: ()=>{
-        this.alertifyService.success('¡Producto agregados')
+        this.alertifyService.success('¡Viaje agregados')
         this.router.navigateByUrl("/")
       },
       error: (error) =>{

@@ -13,22 +13,43 @@
             <thead>
                 <tr class="table-info">
                     <th style="display: none">Id</th>
-                    <th>Descipcion</th>
+                    <th>Telefono Usuario</th>
+                    <th>Direccion</th>
+                    <th>Barrio</th>
+                    <th>Observacion</th>
+                    <th>Movil</th>
+                    <th>Placa</th>
+                    <th>Llego</th>
+                    <th>recepcionado</th>
+                    <th>ASignado</th>
+                    <th>Recogido</th>
+                    <!-- <th>Descipcion</th>
                     <th>Precio</th>
-                    <th>Stock</th>
+                    <th>Stock</th> -->
                     <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let product of products; let i = index">
-                    <td style="display: none"> {{product._id}} </td>
-                    <td> {{product.description}} </td>
+                <tr *ngFor="let taxi of taxis; let i = index">
+                    <td style="display: none"> {{taxi._id}} </td>
+                    <td>{{taxi.telefono_usuario}}</td>
+                    <td>{{taxi.direccion}}</td>
+                    <td>{{taxi.barrio}}</td>
+                    <td>{{taxi.observacion}}</td>
+                    <td>{{taxi.movil_taxi}}</td>
+                    <td>{{taxi.placa_taxi}}</td>
+                    <td>{{taxi.llego}}</td>
+                    <td>{{taxi.recepcionado}}</td>
+                    <td>{{taxi.asignado}}</td>
+                    <td>{{taxi.recogido}}</td>
+                    
+                    <!-- <td> {{product.description}} </td>
                     <td> {{product.price}} </td>
-                    <td> {{product.stock}} </td>
+                    <td> {{product.stock}} </td> -->
                     <td>
                         <div class="btn-group">
-                            <a routerLink="/update/{{product._id}}" class="btn btn-edit"><fa-icon [icon]="faPen"></fa-icon> </a>
-                            <button (click)="delete(product._id, i)" class="btn btn-delete"><fa-icon [icon]="faTrash"></fa-icon></button>
+                            <a routerLink="/update/{{taxi._id}}" class="btn btn-edit"><fa-icon [icon]="faPen"></fa-icon> </a>
+                            <button (click)="delete(taxi._id, i)" class="btn btn-delete"><fa-icon [icon]="faTrash"></fa-icon></button>
 
                         </div>
                     </td>

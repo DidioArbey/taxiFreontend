@@ -1,6 +1,6 @@
 import { Component , OnInit} from '@angular/core';
 import { faCirclePlus, faPen,faTrash} from '@fortawesome/free-solid-svg-icons'
-import { Product } from 'src/app/models/product.model';
+import { Taxi } from 'src/app/models/product.model';
 import { CrudService } from 'src/app/services/crud.service';
 import { AlertifyService } from 'src/app/services/alertify.service';
 
@@ -14,16 +14,16 @@ export class ShowComponent implements OnInit {
   faPen = faPen
   faTrash = faTrash
 
-  products: Product[]= []
+  taxis: Taxi[]= []
 
   constructor(private crudService: CrudService, private alertifyService: AlertifyService){
 
   }
 
   ngOnInit(): void {
-      this.crudService.getProducts().subscribe((res: Product[])=>{
+      this.crudService.getProducts().subscribe((res: Taxi[])=>{
         // console.log(res);
-        this.products = res
+        this.taxis = res
       })
   }
   delete(id:any, index:any){
@@ -31,7 +31,7 @@ export class ShowComponent implements OnInit {
       message: "¿Esta seguro de eliminar?",
       callback_delete: ()=>{
         this.crudService.deletProduct(id).subscribe((res)=>{
-          this.products.splice(index,1)
+          this.taxis.splice(index,1)
         })
     }
   })

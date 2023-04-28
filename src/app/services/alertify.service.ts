@@ -31,7 +31,7 @@ export class AlertifyService {
     alertify.confirm(message, function(e:any){
       if(e){
         callback_delete();
-        alertify.success("Producto eliminado con exito")
+        alertify.success("Viaje eliminado con exito")
 
       }
     })

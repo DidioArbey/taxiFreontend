@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../models/product.model';
+import { Taxi } from '../models/product.model';
 
 //peticiones del backen con core angular
 import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http'
@@ -11,7 +11,7 @@ import {catchError, map} from 'rxjs/operators'
 })
 export class CrudService {
   //restAPI
-  private REST_API: string = 'http://localhost:8000/api/products'
+  private REST_API: string = 'http://localhost:8000/api/Taxis'
   httpHeaders = new HttpHeaders().set('Content-type','application/json')
 
 
@@ -30,7 +30,7 @@ export class CrudService {
     )
   }
 
-  createProduct(data:Product): Observable<any>{
+  createProduct(data:Taxi): Observable<any>{
     return this.httpClient.post(this.REST_API, data,{headers: this.httpHeaders}).pipe(catchError(this.handleError))
   }
 
